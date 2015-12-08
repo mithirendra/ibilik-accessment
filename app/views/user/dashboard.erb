@@ -1,0 +1,39 @@
+<div class="navigation">
+<% if current_user != nil %>
+			<% if @current_user.name == @user.name %>
+				Profile Info<br>
+				<a href="/users/<%= @user.id %>"><button>View Profile</button></a>
+				<a href="/users/<%= @user.id %>/edit"><button>Edit Profile</button></a>
+				<a href="/users/<%= @user.id %>/edit/password"><button>Change Password</button></a>
+				<a href="/users/<%= @user.id %>/edit/email"><button>Change Email</button></a>
+				<br><br>
+				Property Rentals<br>
+				<a href="/properties/new"><button>Post New Property</button></a>
+				<a href="/users/properties/<%= @user.id %>"><button>My properties</button></a>
+				<a href="/users/comments/<%= @user.id %>"><button>My comments</button></a>
+				<a href="/users/bookings/<%= @user.id %>"><button>My bookings</button></a>		
+
+				<a href="/"><button>Back to main page</button></a><br><br>
+			
+			<% else %>
+				<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+			<% end %>	
+		<% else %>
+			<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+		<% end %>
+</div>
+	
+<div class="main_content">
+		<div class="main_content_right">
+			<h1>User Dashboard</h1>
+
+				<strong>Name: </strong><%= @user.name %><br>
+				<strong>Email: </strong><%= @user.email %><br>
+				<strong>User Description: </strong><br>
+					<br><br>
+</div>
+</div>
+
+
+
+

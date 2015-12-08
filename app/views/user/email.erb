@@ -1,0 +1,22 @@
+<div class="navigation">
+	<a href="/"><button class="myButton">Back to main page</button></a>
+	<a href="/dashboard/<%= @user.id %>"><button class="myButton">Back to Profile Page</button></a><br><br>
+</div>
+
+<div class="main_content">
+	<div class="main_content_right">
+
+		<h1>Update User Email</h1>
+
+		<form action="/users/<%= @user.id %>" method="post">
+			<input type="hidden" name="_method" value="patch">
+
+			<label>New Email: </label>
+			<input type="text" name="password" value="<%= @user.email %>"><br><br>
+
+			<input type="submit" value="Update User Email" style="height:40px;width:150px">
+		</form><br><br>
+		<!-- <div class="line">
+		</div> -->
+	</div>
+</div>

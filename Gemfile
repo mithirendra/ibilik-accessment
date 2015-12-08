@@ -27,6 +27,8 @@ gem 'rspec'
 group :development, :test do
 	# Adding shotgun for local web hosting
 	gem 'shotgun'
+	gem 'byebug'
+	# gem 'bcrypt'
 end
 
 group :production do

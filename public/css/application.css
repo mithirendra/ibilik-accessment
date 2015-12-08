@@ -1,0 +1,46 @@
+.header {
+	border-top: 2px solid #b92b27;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0;
+	height: 50px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: white;
+}
+
+#logo {
+	display: inline;
+	margin-left: 10px;
+}
+
+#user_login {
+	display: inline;
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+.navigation {
+	width: 20%;
+	top: 53px;
+	float: left;
+	text-align: center;
+	display: block;
+	background-color: #f1f1f1;
+	padding-top: 60px;
+	padding-bottom: 200px;
+	position: fixed;
+}
+
+.main_content {
+	width: 80%;
+	display: inline;
+	float: right;
+}
+
+.main_content_right {
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-right: 50px
+}

@@ -1,0 +1,20 @@
+<div class="navigation">
+	<a href="/properties/<%= @property.id %>"><button class="myButton">Back to question</button></a>
+	<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+		<h1>Edit Property</h1>
+
+		<form action="/properties/<%= @property.id %>" method="post">
+			<input type="hidden" name="_method" value="patch">
+			<label>Title: </label>
+			<input type="text" name="title" value="<%= @property.property_title %>"><br><br>
+			<label>Description: </label>
+			<input type="text" name="description" value="<%= @property.property_desc %>"><br><br><br>
+
+			<input type="submit" value="Update Property" style="height:40px;width:150px">
+		</form><br><br>
+</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="navigation">
+	<a href="/properties/<%= @property.id %>"><button class="myButton">Back to property</button></a>
+	<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+</div>
+
+<div class="main_content">
+	<div class="main_content_right">
+
+		<h1>Edit / Delete Booking</h1>
+
+		<form action="/bookings/<%= @booking.id %>" method="post">
+			<input type="hidden" name="_method" value="patch">
+			<label>Content: </label>
+			<input type="text" name="content" value="<%= @booking.booking %>"><br><br>
+			<input type="submit" value="Update Booking" style="height:40px;width:150px">
+		</form><br>
+
+		<form action="/bookings/<%= @booking.id %>" method="post">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete Booking" style="height:40px;width:150px">
+		</form><br><br>
+
+	</div>
+</div>

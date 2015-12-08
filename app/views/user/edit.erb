@@ -1,0 +1,22 @@
+<div class="navigation">
+	<a href="/"><button class="myButton">Back to main page</button></a>
+	<a href="/dashboard/<%= @user.id %>"><button class="myButton">Back to User Dashboard</button></a><br><br>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+
+		<h1>Edit User Profile</h1>
+
+		<form action="/users/<%= @user.id %>" method="post">
+			<input type="hidden" name="_method" value="patch">
+
+			<label>Name: </label>
+			<input type="text" name="name" value="<%= current_user.name %>"><br><br>
+			<label>Description: </label>
+			<textarea type="text" name="description"></textarea><br><br>
+
+			<input type="submit" value="Update User Profile" style="height:40px;width:150px"><br><br>
+		</form>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="navigation">
+	<a href="/dashboard/<%= current_user.id %>"><button class="myButton">Back to main page</button></a><br><br>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+		
+		<h1>Post your property</h1>
+
+		<form action="/properties" method="post">
+			<label>Location: </label>
+			<input type="number" name="location"><br><br>		
+			
+			<label>Title: </label>
+			<input type="text" name="title"><br><br>
+		
+			<label>Description: </label>
+			<textarea name="description"></textarea><br><br><br>
+			
+			<label>Extras: </label>
+			<textarea name="extras"></textarea><br><br><br>
+
+			<label>Preference: </label>
+			<input type="text" name="preference"><br><br>
+
+			<label>Rental: </label>
+			<input type="number" name="rental"><br><br>			
+			
+			<input type="submit" value="Post Your Property" style="height:40px;width:150px">
+		</form><br><br>
+
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="navigation">
+	<a href="/properties/<%= @property.id %>"><button class="myButton">Back to property</button></a><br><br>
+</div>
+
+<div class="main_content">
+	<div class="main_content_right">
+		
+		<h1>Comment on Property</h1>
+
+		<h2>Property: <%= @property.property_title %></h2>
+
+		<form action="/properties/<%= @property.id %>/comments" method="post">
+			<label>Comment: </label>
+			<textarea name="comment"></textarea><br><br><br>
+			<input type="submit" value="Post Comment" style="height:40px;width:150px">
+		</form><br><br>
+	</div>
+</div>

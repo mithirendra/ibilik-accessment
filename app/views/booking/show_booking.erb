@@ -1,0 +1,16 @@
+<div class="navigation">
+	<a href="/dashboard/<%= current_user.id %>"><button class="myButton">Back to profile page</button></a><br><br>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+		<h1>Show Booking</h1>
+
+				<strong><%= "#{@booking.booking}</a>" %></strong><br>
+
+				<%= @booking.created_at.strftime("%d %B %Y") %><br><br>
+				<a href="/bookings/<%= @booking.id %>/edit"><button style="height:25px;width:170px">Edit / Delete Booking</button></a><br><br>
+
+		</div>
+	</div>
+</div>

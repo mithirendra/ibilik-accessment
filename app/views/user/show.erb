@@ -1,0 +1,32 @@
+<div class="navigation">
+<% if current_user != nil %>
+			<% if @current_user.name == @user.name %>
+				<!-- <a href="/users/questions/<%= @user.id %>"><button class="myButton">My questions</button class="myButton"></a>
+				<a href="/users/answers/<%= @user.id %>"><button class="myButton">My answers</button></a> -->
+				<form action="/users/<%= @user.id %>" method="post">
+					<input type="hidden" name="_method" value="delete">
+					<input type="submit" value="Delete Profile" class="myButton">
+				</form>
+				<a href="/dashboard/<%= current_user.id %>"><button class="myButton">Back to Dashboard</button></a><br><br>
+			<% else %>
+				<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+			<% end %>	
+		<% else %>
+			<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+		<% end %>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+			<h1>User Dashboard</h1>
+
+				<strong>Name: </strong><%= @user.name %><br>
+				<strong>Email: </strong><%= @user.email %><br>
+				<strong>User Description: </strong><br>
+					<br><br>
+</div>
+</div>
+
+
+
+

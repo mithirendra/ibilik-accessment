@@ -1,0 +1,25 @@
+<div class="navigation">
+	<a href="/properties/<%= @property.id %>"><button class="myButton">Back to property</button></a>
+	<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+</div>
+
+<div class="main_content">
+	<div class="main_content_right">
+
+		<h1>Edit / Delete Comment</h1>
+
+		<form action="/comments/<%= @comment.id %>" method="post">
+			<input type="hidden" name="_method" value="patch">
+			<label>Content: </label>
+			<input type="text" name="content" value="<%= @comment.comment_desc %>"><br><br>
+			<input type="submit" value="Update Comment" style="height:40px;width:150px">
+		</form><br>
+
+		<form action="/comments/<%= @comment.id %>" method="post">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete Comment" style="height:40px;width:150px">
+		</form><br><br>
+		<div class="line">
+	</div>
+	</div>
+</div>

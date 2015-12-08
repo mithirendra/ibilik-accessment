@@ -1,0 +1,52 @@
+<div class="navigation">
+	<% if current_user != nil %>
+		<% if @current_user.name == @property.user.name %>
+			<br><br><a href="/properties/<%= @property.id %>/edit"><button class="myButton">Edit Property</button></a>
+			<form action="/properties/<%= @property.id %>" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<input type="submit" value="Delete property" class="myButton">
+			</form>
+			<a href="/properties/<%= @property.id %>/comments/new"><button class="myButton">Add A Comment</button></a>
+			<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+		<% else %>
+			<a href="/properties/<%= @property.id %>/comments/new"><button class="myButton">Comment on Property</button></a>
+			<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+		<% end %>
+	<% else %>
+		<br>
+		<a href="/"><button class="myButton">Back to main page</button></a><br><br>
+	<% end %>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+		
+		<h1>Property: <%= @property.property_title %></h1>
+		<strong>By:</strong> <a href="/users/<%= @property.user.id %>"><%= @property.user.name %></a><br>
+		<strong>Date:</strong> <%= @property.created_at.strftime("%d %B %Y") %><br><br>
+
+		<strong>Property Description: </strong><br>
+
+			<%= @property.property_desc %><br><br>
+
+		<a href="/properties/<%= @property.id %>/bookings/new"><button>Book This Property</button></a>
+
+			<h3><strong><%= @comments.length %> Comments: </strong></h3>
+
+				<% count = 1 %>
+				<% @comments.each do |x| %>
+					
+
+							<%= "#{count}. #{x.comment_desc}</a>" %>
+
+
+							By <a href="/users/<%= x.user.id %>"><%= x.user.name %></a>, <%= x.created_at.strftime("%d %B %Y") %><br>
+				
+							<% if current_user.id == x.user.id %>
+									<a href="/comments/<%= x.id %>/edit"><button style="height:25px;width:170px">Edit / Delete Answer</button></a><br><br>
+								<% end %>
+					<% count += 1 %><br>
+				<% end %>
+
+	</div>
+</div>

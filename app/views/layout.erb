@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<link rel="stylesheet" href="/css/application.css">
+	
+	<title>mitbilik - We bring rooms to you!</title>
+	
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="/js/application.js"></script>
+	
+</head>	
+
+<body>
+	<!-- <div class="header">
+		<div id="logo">
+		</div>
+		<div id="user_login" align="left"> -->
+			<% if session[:user_id] != nil %>
+				<% @current_user = User.find_by_id(session[:user_id]) %>
+				<%= "Welcome " %><strong><%= @current_user.name %></strong><%= ". You are signed in" %>
+			<% else %>
+				<%= "You are not signed in" %>
+			<% end %><br><br>
+	<!-- 	</div>
+	</div> -->
+	
+	<div id="main-container">
+		<%= yield %>
+	</div>
+
+	<div class="footer">
+	</div>
+	<div>
+	Copyright © mithimaniam 2015
+	</div><br>
+
+</body>
+</html>

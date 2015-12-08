@@ -1,0 +1,22 @@
+<div class="navigation">
+	<a href="/dashboard/<%= current_user.id %>"><button class="myButton">Back to profile page</button></a><br><br>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+		<h1>Show All My Bookings</h1>
+
+		<% count = 1 %>
+		<% @bookings.each do |x| %>
+
+				<strong><%= "#{count}. <a href='/bookings/#{x.id}'>#{x.booking}</a>" %></strong><br>
+
+				<% count += 1 %>
+			
+				<%= x.created_at.strftime("%d %B %Y") %><br><br>
+		
+		<% end %><br><br>
+
+		</div>
+	</div>
+</div>

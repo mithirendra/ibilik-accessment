@@ -1,2 +1,36 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<div class = "navigation">
+<% if session[:user_id] == nil %>				
+	
+		<a href="/login"><button class="myButton">Login to mitbilik</button></a><br><br>
+	
+<% else %>
+	
+			<form action="/users/logout" method="post">
+				<input type="submit" value="Session Logout" class="myButton">
+			</form>
+			<a href="/dashboard/<%= current_user.id %>"><button class="myButton">Dashboard</button></a>
+		
+<% end %>
+</div>
+
+<div class="main_content">
+		<div class="main_content_right">
+			<h1>Main mitbilik page</h1>
+
+			<h3>Top rentals for you:</h3>
+
+			<% count = 1 %>
+				<% @property.each do |x| %>
+					<div class="question">
+						<strong><%= "#{count}. <a href='/properties/#{x.id}'>#{x.property_desc}</a>" %><br></strong>
+					</div>
+					<div class="user_views">
+							<%= x.user.name %><br>
+							<%= x.click_count %> Views<br>
+							<%= x.created_at.strftime("%d %B %Y") %>
+					</div><br>
+						<%= "#{x.property_desc}" %>
+				<% count += 1 %><br><br>
+			<% end %><br><br>
+</div>
+</div>
